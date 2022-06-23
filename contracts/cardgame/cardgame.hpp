@@ -2,6 +2,18 @@
 
 using namespace std;
 using namespace eosio;
+// hợp đồng thông mình về game thẻ, hợp đồng định nghĩa màn chơi "cuộc chiến nguyên tố"
+/* Giải thích luật chơi
+  Mỗi người chơi bắt đầu với một bộ thẻ giống hệt nhau.
+     Thẻ sinh vật có hai thuộc tính:
+     Công suất: 1, 2 hoặc 3
+     Nguyên tố: Gỗ, Lửa hoặc Nước
+     Ngoài ra còn có 2 thẻ đặc biệt:
+     Thẻ PACEHM làm mất hiệu lực của tất cả các kết quả trong một hiệp đấu
+     Thẻ SILVRA có sức mạnh là 3, nhưng không có phần thưởng tương thích nguyên tố
+     Khi bắt đầu trò chơi, các bộ bài được xáo trộn và mỗi người chơi rút 4 lá bài. Các quân bài trên tay luôn được úp.
+     Mỗi vòng, người chơi chọn một thẻ. Các lựa chọn được tiết lộ đồng thời.
+*/
 class [[eosio::contract]] cardgame : public eosio::contract {
 
   private:
